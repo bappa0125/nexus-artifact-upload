@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+   <servers>
+    <server>                                    <!--  this istruction is to be repeated for all group. sanpshot and release repo -->
+      <id>maven-group</id>                     <!--  This can be anyhting as long as it is unique . this has got no relation with nexus repository id ,this id should be same in POM.xml -->
+      <username>subrata.fouzder</username>     <!--  Change the user id for nexus, this is user id not your mail id -->
+      <password>xxxxx</password>           <!--  change pass word -->
+    </server>
+    <server>
+      <id>dcpp_snapshot</id>    
+      <username>subrata.fouzder</username>
+      <password>xxxx</password>
+    </server>
+    <server>
+      <id>dcpp_release</id>
+      <username>subrata.fouzder</username>
+      <password>xxxxxx</password>
+    </server>
+  </servers> 
+   <mirrors>
+    <mirror>
+      <id>maven-group</id>
+      <name>central</name>
+      <url>https://alm.xxxxx.com/nexus/repository/xxxxxGroup/</url>
+      <mirrorOf>*</mirrorOf>
+    </mirror>
+      <mirror>
+        <id>MavenCentral</id>       
+        <url>https://repo.maven.apache.org/maven2</url>
+        <mirrorOf>central</mirrorOf>
+       </mirror>
+  </mirrors>
+   <profiles> 
+      <profile>
+         <id>ADOP_Nexus</id>      
+         <repositories> 
+            <repository> 
+               <snapshots>
+                  <updatePolicy>always</updatePolicy> 
+                 <enabled>false</enabled> 
+               </snapshots> 
+               <id>dcpp_release</id> 
+               <name>libs-release</name> <!--  this can be anything but unique and consistent accross POM and settings.xml -->
+               <url>https://alm.xxxxxx.com/nexus/repository/xxxxxx_2_Release/</url> <!--  should be same as above release url -->		
+            </repository> 
+            <repository> 
+               <snapshots>
+                  <updatePolicy>always</updatePolicy>
+               </snapshots> 
+               <id>dcpp_snapshot</id> 
+               <name>libs-snapshot</name> <!--  this can be anything but unique and consistent accross POM and settings.xml -->
+               <url>https://xxxxxxx.com/nexus/repository/xxxxx_2_Snapshot/</url> <!--  should be same as above snapshotease url -->
+            </repository>       
+         </repositories> 
+         <pluginRepositories>        
+            <pluginRepository> 
+               <snapshots> 
+                  <enabled>false</enabled> 
+               </snapshots> 
+               <id>dcpp_release</id> 
+               <name>libs-release</name> 
+               <url>https://alm.xxxxx.com/nexus/repository/xxxxxxx_2_Release/</url> 
+            </pluginRepository>
+            <pluginRepository> 
+               <snapshots/> 
+               <id>dcpp_snapshot</id> 
+               <name>libs-snapshot</name> 
+               <url>https://alm.xxxxxx.com/nexus/repository/xxxxx_Snapshot/</url> 
+            </pluginRepository>				
+         </pluginRepositories> 
+      </profile> 
+   </profiles> 
+   <activeProfiles> 
+      <activeProfile>ADOP_Nexus</activeProfile> 
+   </activeProfiles> 
+</settings>
