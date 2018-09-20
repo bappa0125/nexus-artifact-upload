@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.accenture.app.newspage</groupId>
+	<groupId>com.xxx.app.xxxx</groupId>
 	<artifactId>netprice-calculator</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
@@ -40,11 +40,11 @@
 	<distributionManagement>
 		<snapshotRepository>
 			<id>dcpp_snapshot</id>
-			<url>https://alm.accenture.com/nexus/repository/Newspage_Replatform_Stage_2_Snapshot/</url>
+			<url>https://alm.xxxx.com/nexus/repository/xxxxxx_2_Snapshot/</url>
 		</snapshotRepository>
 		<repository>
 			<id>dcpp_release</id>
-			<url>https://alm.accenture.com/nexus/repository/Newspage_Replatform_Stage_2_Release/</url>
+			<url>https://alm.xxxxxx.com/nexus/repository/xxxxxxx_2_Release/</url>
 		</repository>
 	</distributionManagement>
 
